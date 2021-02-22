@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django To Do List App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
+    <style> 
+    </style>
+</head>
+
+<body>
+    <div id="myDIV" class="header">
+        <div class="heading">
+            <h2 >Django To Do List App</h2>
+        </div>
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="input_container">
+                <div class="input_cont">
+                    <input type="search" name="content_data" id="myInput" placeholder="Enter Content Here">
+                </div>
+                <div class="input_btn">
+                  <button type="submit" class="addBtn"><i class="fas fa-plus-square"></i> Add Content</button>
+                </div>
+            </div>
+            </form>
+    </div>
+    <div class="to_do_list_container">
+        <ul id="myUL">
+            {% for data in all_data reversed %}
+            <li class="item">
+                <p><span class="item_data">{{ data.content | title }}</span><span>{{ data.time_field }}</span></p>
+                <div class="close">
+                    <button><a href="edit/{{data.id}}"><i class="fas fa-edit"></i> Edit</a></button>
+                    <button class="delete_option" value="{{data.id}}">
+                        <a href="#" ><i class="fas fa-trash"></i> Delete</a>
+                    </button>
+                    <!-- delete/{{data.id}} -->
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="delete_container">
+      
+    </div>
+<script src="{%static 'js/app.js'%}"></script>
+</body>
+
+</html>
+  

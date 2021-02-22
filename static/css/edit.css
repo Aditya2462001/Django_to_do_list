@@ -1,0 +1,85 @@
+  *
+        {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            background-color: rgba(0,0,0,0.1);
+        }
+        .container
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(80, 230, 80, 0.747);
+            letter-spacing: 1px;
+        }
+        .container h2
+        {
+            margin: 20px 0px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container .edit_fields
+        {
+           display: flex;
+           flex-direction: column;
+        }
+        .container .edit_fields .input_field
+        {
+            width: 100%;
+        }
+         .edit_fields .input_field .text-edit
+         {
+             width: 80%;
+             height: 30px;
+             border-radius: 5px;
+             border: none;
+             box-shadow: 0px 0px 10px rgba(119, 238, 51, 0.932);
+             padding: 0px 10px;
+             outline-color: rgb(80, 230, 80);
+         }
+         .edit_fields .input_btn
+         {
+             width: 100%;
+             margin-top: 10px;
+         }
+         .edit_fields .input_btn  .edit_btn
+         {
+             width: 60%;
+             height: 30px;
+             text-transform: uppercase;
+             font-weight: bold;
+             letter-spacing: 1px;
+             background-color: rgb(80, 230, 80);
+             border-radius: 5px;
+             border: none;
+             cursor: pointer;
+             outline-color: rgb(80, 230, 80);
+             transition: all 0.5s;
+         }
+         .edit_fields .input_btn  .edit_btn:hover
+         {
+             border: 2px solid rgb(80, 230, 80);
+             color: green;
+             background-color: transparent;
+             transform: scale(1.04);
+         }
+
+         @media only screen and (max-width:413px)
+         {
+             .container
+             {
+                 width: 300px;
+             }
+             
+
+         }
